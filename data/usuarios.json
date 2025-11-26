@@ -1,0 +1,17 @@
+[
+  {
+    "user": "standard_user",
+    "pass": "secret_sauce",
+    "resultado_esperado": "exitoso"
+  },
+  {
+    "user": "locked_out_user",
+    "pass": "secret_sauce",
+    "resultado_esperado": "fallido" 
+  },
+  {
+    "user": "problem_user",
+    "pass": "secret_sauce",
+    "resultado_esperado": "exitoso"
+  }
+]

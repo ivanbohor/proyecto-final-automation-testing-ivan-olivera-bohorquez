@@ -1,59 +1,105 @@
-Pre-entrega Proyecto Final - Automatización de Testing
-Este proyecto implementa una automatización de pruebas para el sitio SauceDemo, utilizando Selenium WebDriver y Python.
+Proyecto Final Talento Tech- Automatización de Testing (UI + API)
+Este proyecto implementa un framework de pruebas automatizadas híbrido, abarcando tanto pruebas de interfaz (UI) para el sitio SauceDemo, como pruebas de backend (API) para JSONPlaceholder, utilizando Python y Selenium con el patrón Page Object Model.
 
 🎯 Propósito del Proyecto
-El objetivo es automatizar los siguientes flujos en la aplicación SauceDemo:
+El objetivo es validar la calidad del software en dos frentes:
 
-Login con credenciales válidas e inválidas
-Verificación del catálogo de productos
-Interacción con el carrito de compras (añadir productos y verificar su contenido)
-Cierre de sesión
+UI (Frontend): Automatizar flujos de negocio críticos como Login, Compra E2E y Carrito.
+
+API (Backend): Validar los métodos HTTP (CRUD) y códigos de respuesta del servidor.
+
 🛠️ Tecnologías Utilizadas
-Python: Lenguaje de programación principal
-Pytest: Framework de testing para estructurar y ejecutar pruebas
-Selenium WebDriver: Para la automatización de la interfaz web
-Git/GitHub: Para control de versiones y compartir el código
+Python: Lenguaje de programación principal.
+
+Pytest: Framework para estructurar, ejecutar y reportar pruebas.
+
+Selenium WebDriver: Automatización de interfaz web.
+
+Requests: Librería para automatización de pruebas de API.
+
+Page Object Model (POM): Patrón de diseño para mantener el código organizado y escalable.
+
+Faker: Generación de datos aleatorios para pruebas robustas.
+
+WebDriver Manager: Gestión automática de drivers del navegador.
+
+Git/GitHub: Control de versiones.
+
 📁 Estructura del Proyecto
-pre_entrega_modelo/ ├── conftest.py # Configuraciones adicionales para pytest ├── helpers.py # Funciones auxiliares reutilizables ├── test_saucedemo.py # Casos de prueba automatizados └── screenshots/ # Capturas de pantalla (se crea automáticamente)
 
-⚙️ Instalación de Dependencias
-Asegúrate de tener Python 3.7 o superior instalado.
-Instala las dependencias necesarias:
-pip install selenium pytest pytest-html
+├── data/
+│   └── usuarios.json         # Datos para Data Driven Testing (Login)
+├── pages/                    # Page Object Model (Clases de páginas)
+│   ├── base_page.py          # Métodos comunes y esperas
+│   ├── login_page.py         # Lógica de Login
+│   └── checkout_page.py      # Lógica de Compra
+├── screenshots/              # Capturas de pantalla (se generan autom. al fallar)
+├── test/
+│   ├── conftest.py           # Configuración del Driver y Hooks de reporte
+│   ├── test_api.py           # Pruebas de Backend (CRUD)
+│   └── test_saucedemo.py     # Pruebas de Frontend (UI)
+├── utils/
+│   ├── helpers.py            # Funciones auxiliares (Carga de datos)
+│   └── __init__.py
+└── requirements.txt          # Lista de dependencias del proyecto
 
-Descarga el WebDriver correspondiente a tu navegador:
 
-ChromeDriver
+⚙️Instalación de Dependencias
+ Tener Python instalado.
 
-GeckoDriver (Firefox)
+Crea un entorno virtual (opcional pero recomendado).
 
-Asegúrate de que el WebDriver esté en tu PATH o especifica su ubicación en el código.
+Instala todas las dependencias automáticamente:
+pip install -r requirements.txt 
+(Esto instalará selenium, pytest, requests, faker y webdriver-manager).
 
-▶️ Ejecución de las Pruebas Para ejecutar todas las pruebas: python3 -m pytest pre_entrega_modelo/test_saucedemo.py -v
+▶️ Ejecución de las Pruebas
+Para ejecutar todas las pruebas (UI + API) y ver el resultado en consola:
 
-Para generar un reporte HTML: python3 -m pytest pre_entrega_modelo/test_saucedemo.py -v --html=reporte.html
+python -m pytest -v
+
+Para ejecutar solo las pruebas de API:
+
+python -m pytest test/test_api.py -v -s
+
+
+Para ejecutar solo las pruebas de UI (SauceDemo):
+
+Bash
+
+python -m pytest test/test_saucedemo.py -v
+Para generar un reporte HTML visual:
+
+Bash
+
+python -m pytest -v --html=reporte.html --self-contained-html
+
 
 ✅ Funcionalidades Implementadas
+🖥️ UI Testing (SauceDemo)
+Patrón Page Object Model (POM): Lógica separada de los tests.
 
-Automatización de Login Caso de éxito con credenciales válidas
-Caso de fallo con credenciales inválidas
+Login Data Driven: Pruebas con múltiples usuarios (estándar, bloqueado, etc.) cargados desde un JSON.
 
-Verificación del Catálogo Comprobación del título de la página
-Verificación de presencia de productos
+Flujo E2E de Compra:
 
-Validación de elementos de la interfaz (menú, filtros, etc.)
+Login.
 
-Interacción con el Carrito Añadir producto al carrito
-Verificar que el contador se incremente
+Agregar al carrito.
 
-Navegar al carrito
+Checkout con datos dinámicos (Faker).
 
-Comprobar que el producto añadido aparezca correctamente
+Validación final de orden.
 
-Cierre de Sesión Verificar que el usuario pueda cerrar sesión correctamente
-✨ Características Adicionales Capturas de pantalla automáticas: Se toman cuando un test falla.
+Manejo de Errores: Capturas de pantalla automáticas (screenshots/) cuando un test falla.
 
-Funciones auxiliares reutilizables: En el archivo helpers.py.
+Navegación Segura: Ejecución en Modo Incógnito para evitar bloqueos y popups de contraseñas.
 
+🔌 API Testing (JSONPlaceholder)
+GET: Obtener listado de usuarios y validar status 200.
 
-📝 Notas Este proyecto fue desarrollado como pre-entrega para el curso de Automatización de Testing. Todas las pruebas están diseñadas para funcionar con el sitio web SauceDemo en su versión actual.
+POST: Simular creación de usuario y validar ID generado (201).
+
+PUT: Actualizar datos de un usuario y validar consistencia (200).
+
+DELETE: Simular eliminación de registros (200).
