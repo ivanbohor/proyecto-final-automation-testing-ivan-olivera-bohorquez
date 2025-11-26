@@ -103,3 +103,17 @@ POST: Simular creación de usuario y validar ID generado (201).
 PUT: Actualizar datos de un usuario y validar consistencia (200).
 
 DELETE: Simular eliminación de registros (200).
+
+### 📊 Reportes y Logging (Requisito Obligatorio)
+
+El proyecto incluye un sistema avanzado de trazabilidad y reportes:
+
+1.  **Reportes HTML Interactivos:**
+    * Generados con `pytest-html`.
+    * Muestran estado, duración y logs de cada prueba.
+    * **Screenshots automáticos:** En caso de fallo, se adjunta una captura de pantalla directamente en el reporte HTML (codificada en Base64).
+
+2.  **Sistema de Logging:**
+    * Implementado en `utils/log_service.py`.
+    * Registra cada interacción (Clicks, Inputs, Esperas) tanto en consola como en archivo físico (`logs/execution.log`).
+    * Facilita la depuración mostrando fecha, hora y acción realizada por el robot.

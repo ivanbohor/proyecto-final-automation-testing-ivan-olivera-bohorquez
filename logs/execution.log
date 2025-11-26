@@ -1,0 +1,32 @@
+2025-11-26 19:06:14,047 - INFO - --- INICIO API TEST: Obtener Usuarios (GET) ---
+2025-11-26 19:06:15,254 - INFO - Request GET a https://jsonplaceholder.typicode.com/users - Status: 200
+2025-11-26 19:06:15,255 - INFO - Usuario encontrado: Leanne Graham - Email: Sincere@april.biz
+2025-11-26 19:06:15,270 - INFO - --- INICIO API TEST: Crear Usuario (POST) ---
+2025-11-26 19:06:16,224 - INFO - Request POST - Status: 201
+2025-11-26 19:06:16,224 - INFO - Usuario creado con ID simulado: 11
+2025-11-26 19:06:16,236 - INFO - --- INICIO API TEST: Actualizar Usuario (PUT) ---
+2025-11-26 19:06:17,307 - INFO - Request PUT usuario 1 - Status: 200
+2025-11-26 19:06:17,329 - INFO - --- INICIO API TEST: Borrar Usuario (DELETE) ---
+2025-11-26 19:06:18,273 - INFO - Request DELETE usuario 1 - Status: 200
+2025-11-26 19:06:32,479 - INFO - ⌨️ Escribiendo 'standard_user' en el elemento ('id', 'user-name')
+2025-11-26 19:06:32,716 - INFO - ⌨️ Escribiendo 'secret_sauce' en el elemento ('id', 'password')
+2025-11-26 19:06:33,076 - INFO - 🖱️ Haciendo Click en ('id', 'login-button')
+2025-11-26 19:06:42,909 - INFO - ⌨️ Escribiendo 'locked_out_user' en el elemento ('id', 'user-name')
+2025-11-26 19:06:43,208 - INFO - ⌨️ Escribiendo 'secret_sauce' en el elemento ('id', 'password')
+2025-11-26 19:06:43,554 - INFO - 🖱️ Haciendo Click en ('id', 'login-button')
+2025-11-26 19:06:43,654 - INFO - 👀 Texto obtenido: 'Epic sadface: Sorry, this user has been locked out.' de ('css selector', '[data-test="error"]')
+2025-11-26 19:06:53,759 - INFO - ⌨️ Escribiendo 'problem_user' en el elemento ('id', 'user-name')
+2025-11-26 19:06:54,084 - INFO - ⌨️ Escribiendo 'secret_sauce' en el elemento ('id', 'password')
+2025-11-26 19:06:54,474 - INFO - 🖱️ Haciendo Click en ('id', 'login-button')
+2025-11-26 19:07:02,749 - INFO - ⌨️ Escribiendo 'standard_user' en el elemento ('id', 'user-name')
+2025-11-26 19:07:02,959 - INFO - ⌨️ Escribiendo 'secret_sauce' en el elemento ('id', 'password')
+2025-11-26 19:07:03,252 - INFO - 🖱️ Haciendo Click en ('id', 'login-button')
+2025-11-26 19:07:03,421 - INFO - 🖱️ Haciendo Click en ('class name', 'btn_inventory')
+2025-11-26 19:07:03,600 - INFO - 🖱️ Haciendo Click en ('class name', 'shopping_cart_link')
+2025-11-26 19:07:03,795 - INFO - 🖱️ Haciendo Click en ('id', 'checkout')
+2025-11-26 19:07:04,033 - INFO - ⌨️ Escribiendo 'Lisa' en el elemento ('id', 'first-name')
+2025-11-26 19:07:04,335 - INFO - ⌨️ Escribiendo 'Martinez' en el elemento ('id', 'last-name')
+2025-11-26 19:07:04,547 - INFO - ⌨️ Escribiendo '63245' en el elemento ('id', 'postal-code')
+2025-11-26 19:07:04,749 - INFO - 🖱️ Haciendo Click en ('id', 'continue')
+2025-11-26 19:07:04,762 - INFO - ⏳ Esperando URL que contenga: 'checkout-step-two.html'
+2025-11-26 19:07:04,829 - INFO - 👀 Texto obtenido: 'Checkout: Overview' de ('class name', 'title')
